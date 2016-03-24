@@ -28,6 +28,18 @@ class TaskController < ApplicationController
     render_template 'tasks/new.html.erb'
   end
 
+  def create #POST
+    last_task = App.tasks.max_by { |task| task.id }
+    new_id = last_task.id + 1
+
+    App.tasks.push(
+      Task.new(new_id, params["body"], false)
+    )
+    puts App.tasks.to_json
+
+    render({ message: "Successfully created!", id: new_id }.to_json)
+  end
+
   def update #PUT
     task = find_task_by_id
 
