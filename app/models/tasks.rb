@@ -13,8 +13,8 @@ class Task
   def to_json(_ = nil)
     {
       id: id,
-      name: name,
-      age: age
+      body: body,
+      completed: completed
     }.to_json
   end
 end
