@@ -16,12 +16,12 @@ class Router
     #
     # Put your routes in this array using the get, post, put, delete methods below. (remember order matters)
     [
-      delete('/tasks/:id', TasksController, :destroy),
-      put('/tasks/:id', TasksController, :update),
-      get('/tasks/new', TasksController, :new),
-      get('/tasks/:id', TasksController, :show),
-      get('/tasks', TasksController, :index),
-      post('/tasks', TasksController, :create)
+      delete('/tasks/:id', TaskController, :destroy),
+      put('/tasks/:id', TaskController, :update),
+      get('/tasks/new', TaskController, :new),
+      get('/tasks/:id', TaskController, :show),
+      get('/tasks', TaskController, :index),
+      post('/tasks', TaskController, :create)
     ].find(&:itself)
   end
 

@@ -17,7 +17,7 @@ class TaskController < ApplicationController
         render task.to_json
       else
         @task = task
-        render_template 'task/show.html.erb'
+        render_template 'tasks/show.html.erb'
       end
     else
       render_not_found

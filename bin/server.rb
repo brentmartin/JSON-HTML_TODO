@@ -11,11 +11,11 @@ module App
   def App.tasks
     @all_tasks ||= [
       #id, body, false
-      Tasks.new(1, body: "Read", false),
-      Tasks.new(2, body: "Feed dog", false),
-      Tasks.new(3, body: "Put Brooks to bed", false),
-      Tasks.new(4, body: "Shoot bow & arrow", false),
-      Tasks.new(5, body: "Take out trash", false)
+      Task.new(1, "Read", false),
+      Task.new(2, "Feed dog", false),
+      Task.new(3, "Put Brooks to bed", false),
+      Task.new(4, "Shoot bow & arrow", false),
+      Task.new(5, "Take out trash", false)
     ]
   end
 end
