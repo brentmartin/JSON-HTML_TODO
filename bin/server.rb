@@ -8,13 +8,14 @@ require_relative '../lib/all'
 
 module App
   # Place all data here inside of a method
-  def App.tweets
-    # This is an example
-    @all_tweets ||= [
-      { message: "cool tweet!", id: 1},
-      { message: "badd tweet!", id: 2},
-      { message: "ohno tweet!", id: 3},
-      { message: "eehhh tweet", id: 4},
+  def App.tasks
+    @all_tasks ||= [
+      #id, body, false
+      Tasks.new(1, body: "Read", false),
+      Tasks.new(2, body: "Feed dog", false),
+      Tasks.new(3, body: "Put Brooks to bed", false),
+      Tasks.new(4, body: "Shoot bow & arrow", false),
+      Tasks.new(5, body: "Take out trash", false)
     ]
   end
 end
