@@ -54,3 +54,14 @@ class TaskController < ApplicationController
       render_not_found
     end
   end
+
+  def destroy #DELETE
+    task = find_task_by_id
+
+    if task
+      App.task.delete(task)
+      render({ message: "Successfully Deleted Task" }.to_json)
+    else
+      render_not_found
+    end
+  end
