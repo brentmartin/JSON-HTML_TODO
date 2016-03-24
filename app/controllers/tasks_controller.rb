@@ -65,3 +65,20 @@ class TaskController < ApplicationController
       render_not_found
     end
   end
+
+  private
+
+  def find_task_by_id
+    App.task.find { |t| t.id == params[:id].to_i }
+  end
+
+  def render_not_found
+    return_message = {
+      message: "Task not found!",
+      status: '404'
+    }.to_json
+
+    render return_message, status: "404 NOT FOUND"
+  end
+
+end
